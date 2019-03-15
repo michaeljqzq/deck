@@ -39,6 +39,7 @@ module.exports = angular
         networkSettings: require('./networkSettings/networkSettings.html'),
         securityGroups: require('./securityGroup/securityGroups.html'),
         instanceType: require('./instanceType/instanceType.html'),
+        tags: require('./tags/tags.html'),
         advancedSettings: require('./advancedSettings/advancedSettings.html'),
       };
 
