@@ -12,7 +12,17 @@ module.exports = angular
       bindToController: {
         command: '=',
       },
-      controllerAs: 'vm',
-      controller: angular.noop,
+      controllerAs: 'tagsSelectorCtrl',
+      controller: 'TagsSelectorCtrl',
     };
-  });
+  })
+  .controller('TagsSelectorCtrl', [
+    '$scope',
+    function($scope) {
+      this.inValid = () => {
+        if (!$scope.command.instanceTags) return false;
+        let length = Object.keys($scope.command.instanceTags).length;
+        return length >= 0 && length <= 3;
+      };
+    },
+  ]);
