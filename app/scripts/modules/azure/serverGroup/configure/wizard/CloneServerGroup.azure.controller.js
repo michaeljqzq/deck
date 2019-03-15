@@ -4,6 +4,8 @@ const angular = require('angular');
 
 import { SERVER_GROUP_WRITER, TaskMonitor, ModalWizard, FirewallLabels } from '@spinnaker/core';
 
+const Utility = require('../../../utility').default;
+
 module.exports = angular
   .module('spinnaker.azure.cloneServerGroup.controller', [
     require('@uirouter/angularjs').default,
@@ -226,7 +228,8 @@ module.exports = angular
           $scope.command.application &&
           $scope.command.credentials &&
           $scope.command.instanceType &&
-          $scope.command.region
+          $scope.command.region &&
+          Utility.getTagErrorMessage($scope.command.instanceTags) === null
         );
       };
     },
