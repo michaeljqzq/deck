@@ -1,6 +1,6 @@
 <div class="form-group">
-  <div class="col-md-12" style="color:red" ng-if="!tagsSelectorCtrl.isValid()">
-    Number of tags exceeds the limit: {{ tagsSelectorCtrl.getLimitation() }}
+  <div class="col-md-12" style="color:red" ng-if="tagsSelectorCtrl.getErrorMessage() !== null">
+    {{ tagsSelectorCtrl.getErrorMessage() }}
   </div>
   <div class="col-md-4 sm-label-left">
     <b>Custom Tags</b>
