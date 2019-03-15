@@ -29,6 +29,7 @@ const helpContents: { [key: string]: string } = {
   'azure.serverGroup.commandToExecute':
     'Command(s) to execute custom scripts provided during provisioning of an instance.',
   'azure.serverGroup.customData': 'Script or metadata to be injected into each instances.',
+  'azure.serverGroup.customTags': 'Custom tags on Virtual Machine Scale Set.',
 };
 
 Object.keys(helpContents).forEach(key => HelpContentsRegistry.register(key, helpContents[key]));
