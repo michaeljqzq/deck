@@ -28,7 +28,7 @@ module.exports = angular
         if (!this.command.instanceTags) return 'instanceTags is not defined';
         let length = Object.keys(this.command.instanceTags).length;
         if (!(length >= 0 && length <= TAG_LIMITATION)) return `Number of tags exceeds the limit: ${TAG_LIMITATION}`;
-        for (let [k, v] of this.command.instanceTags) {
+        for (let [k, v] of Object.entries(this.command.instanceTags)) {
           if (k.length > TAG_KEY_LENGTH_LIMITATION)
             return `Length of Tag key: ${k} exceeds the limit: ${TAG_KEY_LENGTH_LIMITATION}`;
           if (v.length > TAG_VALUE_LENGTH_LIMITATION)
