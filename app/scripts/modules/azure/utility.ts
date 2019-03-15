@@ -7,7 +7,7 @@ export default class Utility {
   public static readonly TAG_LIMITATION: number = 3;
   public static readonly TAG_KEY_LENGTH_LIMITATION: number = 5;
   public static readonly TAG_VALUE_LENGTH_LIMITATION: number = 6;
-  public static readonly TAG_INVALID_CHAR_REG_EXR: RegExp = /[<>%&\\?/]/g;
+  public static readonly TAG_INVALID_CHAR_REG_EXR: RegExp = /[<>%&\\?/]/;
 
   public static getTagErrorMessage(tagsObject: ITag): string | null {
     if (!tagsObject) {
