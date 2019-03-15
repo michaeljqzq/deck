@@ -19,9 +19,9 @@ module.exports = angular
   .controller('TagsSelectorCtrl', [
     '$scope',
     function($scope) {
-      this.inValid = () => {
-        if (!$scope.command.instanceTags) return false;
-        let length = Object.keys($scope.command.instanceTags).length;
+      this.isValid = function() {
+        if (!this.command.instanceTags) return false;
+        let length = Object.keys(this.command.instanceTags).length;
         return length >= 0 && length <= 3;
       };
     },
