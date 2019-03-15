@@ -49,6 +49,7 @@ module.exports = angular
       $scope.applicationName = application.name;
       $scope.application = application;
       $scope.command = serverGroupCommand;
+      window.zhiqing = serverGroupCommand;
 
       // Give regions an init value to prevent it being undefined. If so, the React component RegionSelectField would get "undefined" for property regions
       // and then be unmounted so that the region selector would be hidden.
