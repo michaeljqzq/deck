@@ -5,7 +5,7 @@ const angular = require('angular');
 const TAG_LIMITATION = 3;
 const TAG_KEY_LENGTH_LIMITATION = 5;
 const TAG_VALUE_LENGTH_LIMITATION = 6;
-const TAG_INVALID_CHAR_REG_EXR = /[<>%&\\?\/]/g;
+const TAG_INVALID_CHAR_REG_EXR = /[<>%&\\?/]/g;
 
 module.exports = angular
   .module('spinnaker.azure.serverGroup.configure.wizard.tags.directive', [])
