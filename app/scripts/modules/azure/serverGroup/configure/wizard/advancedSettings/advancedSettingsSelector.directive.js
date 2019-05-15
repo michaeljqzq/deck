@@ -19,7 +19,9 @@ module.exports = angular
   .controller('azureServerGroupAdvancedSettingsSelectorCtrl', function() {
     // zhiqing remove it later
     this.command.disks = [];
-    this.command.backingData.dataDiskTypes = ['Premium SSD', 'Standard SSD', 'Standard HDD'];
+    setTimeout(() => {
+      this.command.backingData.dataDiskTypes = ['Premium SSD', 'Standard SSD', 'Standard HDD'];
+    }, 1000);
 
     this.setDisks = disks => {
       this.command.disks = disks;
