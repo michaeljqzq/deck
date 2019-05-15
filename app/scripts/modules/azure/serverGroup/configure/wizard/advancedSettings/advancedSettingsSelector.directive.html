@@ -73,7 +73,7 @@
                 <select
                   class="form-control input-sm"
                   ng-model="disk.type"
-                  ng-options="dataDiskType in adv.command.backingData.dataDiskTypes"
+                  ng-options="type for type in adv.command.backingData.dataDiskTypes"
                   on-select="adv.handleDataDiskChange()"
                 ></select>
               </td>
