@@ -55,10 +55,69 @@
       </div>
     </div>
 
-    <azure-disk-configurer
-      command="adv.command"
-      disks="adv.command.disks"
-      update-disks="adv.setDisks(disks)"
-    ></azure-disk-configurer>
+    <div class="form-group">
+      <div class="sm-label-left" style="margin-bottom: 5px;">Data Disks</div>
+      <table class="table table-condensed packed tags">
+        <thead>
+          <tr>
+            <th>LUN</th>
+            <th>Size (GB)</th>
+            <th>Type</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="disk in adv.command.disks">
+            <td>
+              <input
+                type="number"
+                class="form-control input-sm"
+                ng-model="disk.lun"
+                ng-change="adv.handleDataDiskChange()"
+                required
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                class="form-control input-sm"
+                ng-model="disk.sizeGb"
+                ng-change="adv.handleDataDiskChange()"
+                required
+                min="10"
+              />
+            </td>
+
+            <td>
+              <ui-select
+                ng-model="disk.type"
+                class="form-control input-sm"
+                on-select="adv.handleDataDiskChange()"
+                required
+              >
+                <ui-select-match placeholder="Select...">{{$select.selected}}</ui-select-match>
+                <ui-select-choices repeat="dataDiskType in adv.command.backingData.dataDiskTypes">
+                  <span ng-bind-html="dataDiskType"></span>
+                </ui-select-choices>
+              </ui-select>
+            </td>
+            <td>
+              <a class="btn btn-link sm-label" style="margin-top: 0;" ng-click="adv.removeDataDisk($index)">
+                <span class="glyphicon glyphicon-trash"></span>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4">
+              <button class="btn btn-block btn-sm add-new" ng-click="adv.addDataDisk()">
+                <span class="glyphicon glyphicon-plus-sign"></span> Add New Data Disk
+              </button>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
   </div>
 </div>
