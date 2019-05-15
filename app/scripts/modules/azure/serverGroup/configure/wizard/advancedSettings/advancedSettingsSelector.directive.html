@@ -61,34 +61,14 @@
         <table class="table table-condensed packed tags">
           <thead>
             <tr>
-              <th>LUN</th>
-              <th>Size (GB)</th>
               <th>Type</th>
+              <th>Size (GB)</th>
+              <th>LUN</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
             <tr ng-repeat="disk in adv.command.disks">
-              <td>
-                <input
-                  type="number"
-                  class="form-control input-sm"
-                  ng-model="disk.lun"
-                  ng-change="adv.handleDataDiskChange()"
-                  required
-                />
-              </td>
-              <td>
-                <input
-                  type="number"
-                  class="form-control input-sm"
-                  ng-model="disk.sizeGb"
-                  ng-change="adv.handleDataDiskChange()"
-                  required
-                  min="10"
-                />
-              </td>
-
               <td>
                 <ui-select
                   ng-model="disk.type"
@@ -102,6 +82,28 @@
                   </ui-select-choices>
                 </ui-select>
               </td>
+
+              <td>
+                <input
+                  type="number"
+                  class="form-control input-sm"
+                  ng-model="disk.sizeGb"
+                  ng-change="adv.handleDataDiskChange()"
+                  required
+                  min="10"
+                />
+              </td>
+
+              <td>
+                <input
+                  type="number"
+                  class="form-control input-sm"
+                  ng-model="disk.lun"
+                  ng-change="adv.handleDataDiskChange()"
+                  required
+                />
+              </td>
+
               <td>
                 <a class="btn btn-link sm-label" style="margin-top: 0;" ng-click="adv.removeDataDisk($index)">
                   <span class="glyphicon glyphicon-trash"></span>
