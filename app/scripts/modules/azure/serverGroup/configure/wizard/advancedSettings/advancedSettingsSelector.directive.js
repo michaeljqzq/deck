@@ -16,4 +16,8 @@ module.exports = angular
       controller: 'azureServerGroupAdvancedSettingsSelectorCtrl',
     };
   })
-  .controller('azureServerGroupAdvancedSettingsSelectorCtrl', function() {});
+  .controller('azureServerGroupAdvancedSettingsSelectorCtrl', function() {
+    this.setDisks = disks => {
+      this.command.disks = disks;
+    };
+  });
