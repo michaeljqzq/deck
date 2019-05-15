@@ -2,6 +2,8 @@
 
 const angular = require('angular');
 
+import { AZURE_DISK_CONFIGURER } from './wizard/advancedSettings/diskConfigurer.component';
+
 module.exports = angular.module('spinnaker.azure.serverGroup.configure', [
   require('./wizard/basicSettings/ServerGroupBasicSettings.controller').name,
   require('./wizard/loadBalancers/ServerGroupLoadBalancers.controller').name,
@@ -18,5 +20,5 @@ module.exports = angular.module('spinnaker.azure.serverGroup.configure', [
   require('./wizard/networkSettings/ServerGroupNetworkSettingsSelector.directive').name,
   require('./wizard/zones/zoneSelector.directive').name,
   require('./wizard/tags/tagsSelector.directive').name,
-  require('./wizard/advancedSettings/diskConfigurer.component').name,
+  AZURE_DISK_CONFIGURER,
 ]);
