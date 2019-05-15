@@ -18,4 +18,5 @@ module.exports = angular.module('spinnaker.azure.serverGroup.configure', [
   require('./wizard/networkSettings/ServerGroupNetworkSettingsSelector.directive').name,
   require('./wizard/zones/zoneSelector.directive').name,
   require('./wizard/tags/tagsSelector.directive').name,
+  require('./wizard/advancedSettings/diskConfigurer.component').name,
 ]);
