@@ -1,4 +1,4 @@
-<div class="form-horizontal">
+<div class="container-fluid form-horizontal">
   <div class="form-group">
     <div class="form-group">
       <div class="col-md-4 sm-label-right">Number of Instances</div>
@@ -70,17 +70,12 @@
           <tbody>
             <tr ng-repeat="disk in adv.command.disks">
               <td>
-                <ui-select
-                  ng-model="disk.type"
+                <select
                   class="form-control input-sm"
+                  ng-model="disk.type"
+                  ng-options="dataDiskType in adv.command.backingData.dataDiskTypes"
                   on-select="adv.handleDataDiskChange()"
-                  required
-                >
-                  <ui-select-match placeholder="Select...">{{$select.selected}}</ui-select-match>
-                  <ui-select-choices repeat="dataDiskType in adv.command.backingData.dataDiskTypes">
-                    <span ng-bind-html="dataDiskType"></span>
-                  </ui-select-choices>
-                </ui-select>
+                ></select>
               </td>
 
               <td>
